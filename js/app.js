@@ -14,7 +14,7 @@ Post.prototype.toHtml = function() {
   $newPortfolioPiece.find('.description', this.description);
   $newPortfolioPiece.find('.link', this.link);
 
-  $newArticle.removeClass('template');
+  $newPortfolioPiece.removeClass('template');
   return $newPortfolioPiece;
 };
 
