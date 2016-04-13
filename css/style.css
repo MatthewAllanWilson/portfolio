@@ -4,6 +4,7 @@ body {
 img {
   width: 300px;
   margin-left: 20px;
+  border-radius: 5px;
 }
 h1 {
   font-size: 30px;
@@ -22,24 +23,39 @@ h1 {
   font-size: 20px;
 }
 
+.main-nav {
+  display: block;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.border {
+  border: solid:10px;
+}
+
 @media only screen and (min-width: 641px) {
-  /*.icon-menu {
-    display: none;
+
+  h1 {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .opening-line {
+    font-size: 15px;
+  }
+
+  .git-hub {
+    font-size: 15px;
   }
 
   .main-nav {
-    padding: .2em .2em .2em .2em;
+    font-size: 15px;
   }
 
-  .main-nav ul {
-    display: block;
-
-  }
-
-  .main-nav  ul li {
+  .main-nav li {
     display: inline;
-    border-bottom: none;
-  }*/
+  }
 
   img {
     width: auto;
