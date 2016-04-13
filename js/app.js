@@ -9,12 +9,13 @@ function Post (obj){
 
 Post.prototype.toHtml = function() {
   var $newPortfolioPiece = $('article.template').clone();
-  $newPortfolioPiece.find('.title', this.title);
-  $newPortfolioPiece.find('.date', this.date);
-  $newPortfolioPiece.find('.description', this.description);
-  $newPortfolioPiece.find('.link', this.link);
-
   $newPortfolioPiece.removeClass('template');
+  $newPortfolioPiece.find('.title').html(this.title);
+  $newPortfolioPiece.find('.date').html(this.date);
+  $newPortfolioPiece.find('.description').html(this.description);
+  $newPortfolioPiece.find('.link').html(this.link);
+  $newPortfolioPiece.append('<hr>');
+
   return $newPortfolioPiece;
 };
 
