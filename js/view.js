@@ -5,7 +5,6 @@ projectView.handleMainNav = function() {
     console.log($(this).data('content'));
     $('.tab-content').hide();
     $("#" + $(this).data('content')).show();
-  
   });
 };
 projectView.handleMainNav();
