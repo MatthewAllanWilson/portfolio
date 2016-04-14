@@ -1,3 +1,65 @@
 body {
   background-color:#F0F8FF;
 }
+img {
+  width: 300px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+h1 {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.opening-line {
+  font-size: 25px;
+}
+
+.git-hub {
+  font-size: 25px;
+}
+
+.main-nav {
+  font-size: 20px;
+}
+
+.main-nav {
+  display: block;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.border {
+  border: solid:10px;
+}
+
+@media only screen and (min-width: 641px) {
+
+  h1 {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .opening-line {
+    font-size: 15px;
+  }
+
+  .git-hub {
+    font-size: 15px;
+  }
+
+  .main-nav {
+    font-size: 15px;
+  }
+
+  .main-nav li {
+    display: inline;
+  }
+
+  img {
+    width: auto;
+    height: 200px;
+  }
+
+}
