@@ -3,8 +3,10 @@ var projectView = {};
 projectView.handleMainNav = function() {
   $('.main-nav').on('click', '.tab', function(){
     console.log($(this).data('content'));
-    $('.tab-content').hide();
-    $("#" + $(this).data('content')).show();
+    $('#about').hide();
+    $('#main-page').hide();
+    $("#" + $(this).data('content')).fadeIn();
   });
 };
+
 projectView.handleMainNav();
