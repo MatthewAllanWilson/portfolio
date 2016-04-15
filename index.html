@@ -2,8 +2,20 @@
 <html>
 <head>
   <title>Matthew Wilson's Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/base.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/layout.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/modules.css"></link>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <script id="project-template" type="text/x-handlebars-template">
+      <article class="template">
+      <div class="title">{{title}}</div>
+      <p class="date">{{date}}</p>
+      <article class="description">{{description}}</article>
+      <a href="{{link}}" class="link">{{link}}</a>
+      </article>
+
+    </script>
 </head>
 <body>
 
@@ -15,19 +27,18 @@
   </nav>
 
   <h1>Matthew Wilson's Web Development Portfolio</h1>
+  <section id="main-page">
   <img src="images/FacePic.jpg">
   <p class="opening-line">Check out some of the great projects I've been working on:</p>
-  <section id="projects">
-    <article class="template">
-
-  <div class="title"></div>
-  <p class="date"></p>
-  <article class="description"></article>
-  <a href class="link"></a>
-
-  </article>
+  <section id="projects"></section>
 </section>
+
+<section id="about">
+  <p>This is my about section</p>
+</section>
+
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
   <script src="js/view.js"></script>
