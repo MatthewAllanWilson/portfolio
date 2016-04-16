@@ -12,7 +12,11 @@
       <div class="title">{{title}}</div>
       <p class="date">{{date}}</p>
       <article class="description">{{description}}</article>
+      <br>
+      <img src="{{image}}">
+      <br>
       <a href="{{link}}" class="link">{{link}}</a>
+      <br>
       </article>
 
     </script>
@@ -23,19 +27,28 @@
     <ul>
       <li class="tab" data-content="main-page"><a href="#"> Home</a></li>
       <li class="tab" data-content="about"><a href="#"> About</a></li>
+      <li class="tab" data-content="projects"><a href="#">Projects</a></li>
+      <li><a href="https://github.com/MatthewAllanWilson">GitHub</a></li>
     </ul>
   </nav>
 
   <h1>Matthew Wilson's Web Development Portfolio</h1>
+<div id="whole-page">
   <section id="main-page">
   <img src="images/FacePic.jpg">
-  <p class="opening-line">Check out some of the great projects I've been working on:</p>
-  <section id="projects"></section>
-</section>
+    </section>
+
+
+  <section id="projects">
+<p class="opening-line">Check out some of the great projects I've been working on:</p>
+  </section>
 
 <section id="about">
   <p>This is my about section</p>
 </section>
+</div>
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
@@ -44,6 +57,5 @@
   <script src="js/view.js"></script>
 </body>
 <footer>
-  <a class="git-hub" href="https://github.com/MatthewAllanWilson">Check out my work on GitHuB</a>
 </footer>
 </html>

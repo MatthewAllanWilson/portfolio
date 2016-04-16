@@ -5,6 +5,7 @@ function Post (obj){
   this.date = obj.date;
   this.description = obj.description;
   this.link = obj.link;
+  this.image = obj.image;
 }
 
 Post.prototype.toHtml = function() {
