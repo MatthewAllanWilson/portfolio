@@ -12,7 +12,11 @@
       <div class="title">{{title}}</div>
       <p class="date">{{date}}</p>
       <article class="description">{{description}}</article>
+      <br>
+      <img src="{{image}}">
+      <br>
       <a href="{{link}}" class="link">{{link}}</a>
+      <br>
       </article>
 
     </script>
@@ -29,10 +33,10 @@
   </nav>
 
   <h1>Matthew Wilson's Web Development Portfolio</h1>
-
-  <section id="main-page" class="whole-page">
+<div id="whole-page">
+  <section id="main-page">
   <img src="images/FacePic.jpg">
-
+    </section>
 
 
   <section id="projects">
@@ -42,8 +46,9 @@
 <section id="about">
   <p>This is my about section</p>
 </section>
+</div>
 
-  </section>
+
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
