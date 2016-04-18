@@ -1,4 +1,4 @@
-var posts = [];
+// var posts = [];
 
 function Post (obj){
   this.title = obj.title;
@@ -8,16 +8,40 @@ function Post (obj){
   this.image = obj.image;
 }
 
+Post.all = [];
+
 Post.prototype.toHtml = function() {
   var $source = $('#project-template').html();
   var template = Handlebars.compile($source);
+
   return template(this);
 };
 
-portfolioData.forEach(function(ele) {
-  posts.push(new Post(ele));
-});
+Post.loadAll = function(dataPassedIn) {
+  dataPassedIn.forEach(function(ele) {
+    Post.all.push(new Post(ele));
+  });
+};
 
-posts.forEach(function(a){
-  $('#projects').append(a.toHtml());
-});
+Post.fetchAll = function (){
+  if (localStorage.postRawData){
+    Post.loadAll(JSON.parse(localStorage.postRawData));
+    projectView.initIndexPage();
+  } else {
+    $.getJSON('../data/projects.json', function(data){
+      Post.loadAll(data);
+      localStorage.setItem('postRawData', JSON.stringify(data));
+      projectView.initIndexPage();
+    });
+  }
+};
+
+projectView.initIndexPage = function () {
+  Post.all.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
+};
+//
+// posts.forEach(function(a){
+//   $('#projects').append(a.toHtml());
+// });
