@@ -24,9 +24,18 @@ Post.loadAll = function(dataPassedIn) {
 };
 
 Post.fetchAll = function (){
-  if (localStorage.postRawData){
-    Post.loadAll(JSON.parse(localStorage.postRawData));
-    projectView.initIndexPage();
+  if (localStorage.projects){
+    $.ajax({
+      type: 'HEAD',
+      url: '../data/projects.json'
+    }).done(function(xhr, message, data) {
+      var eTag = xhr.getResponseHeaders('etag');
+      if(eTag = localStorage.eTag) {
+        projectView.initIndexPage();
+      } else {
+        Post.loadAll(JSON.parse(localStorage.postRawData));
+      }
+    });
   } else {
     $.getJSON('../data/projects.json', function(data){
       Post.loadAll(data);
@@ -41,7 +50,3 @@ projectView.initIndexPage = function () {
     $('#projects').append(a.toHtml());
   });
 };
-//
-// posts.forEach(function(a){
-//   $('#projects').append(a.toHtml());
-// });
