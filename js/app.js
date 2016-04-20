@@ -46,12 +46,6 @@
     }
   };
 
-  projectView.initIndexPage = function () {
-    Post.all.forEach(function(a){
-      $('#projects').append(a.toHtml());
-    });
-  };
-
   module.Post = Post;
 
 })(window);

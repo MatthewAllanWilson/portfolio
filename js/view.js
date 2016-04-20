@@ -14,6 +14,12 @@
     });
   };
 
+  projectView.initIndexPage = function () {
+    Post.all.forEach(function(a){
+      $('#projects').append(a.toHtml());
+    });
+  };
+
   projectView.handleMainNav();
 
   module.projectView = projectView;
