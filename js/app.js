@@ -25,20 +25,21 @@
   };
 
   Post.fetchAll = function (){
-    if (localStorage.projects){
-      $.ajax({
-        type: 'HEAD',
-        url: '../data/projects.json'
-      }).done(function(xhr, message, data) {
-        var eTag = xhr.getResponseHeaders('etag');
-        if(eTag = localStorage.eTag) {
-          projectView.initIndexPage();
-        } else {
-          Post.loadAll(JSON.parse(localStorage.postRawData));
-        }
-      });
+    if (localStorage.postRawData){
+      // $.ajax({
+      //   type: 'HEAD',
+      //   url: '/data/projects.json'
+      // }).done(function(xhr, message, data) {
+      //   var eTag = xhr.getResponseHeader('eTag');
+      //   if(eTag = localStorage.eTag) {
+      //     projectView.initIndexPage();
+      //   } else {
+      Post.loadAll(JSON.parse(localStorage.postRawData));
+      projectView.initIndexPage();
+        // }
+      // });
     } else {
-      $.getJSON('../data/projects.json', function(data){
+      $.getJSON('/data/projects.json', function(data){
         Post.loadAll(data);
         localStorage.setItem('postRawData', JSON.stringify(data));
         projectView.initIndexPage();
