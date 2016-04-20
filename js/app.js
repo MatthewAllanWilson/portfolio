@@ -1,4 +1,3 @@
-// var posts = [];
 (function(module){
 
   function Post (obj){
