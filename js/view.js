@@ -11,12 +11,9 @@
   };
 
   projectView.populateFilter = function() {
-    console.log('populateFilter started running');
-    $('.title').each(function() {
-      console.log('project.each started running');
+    $('article').each(function() {
       if (!$(this).hasClass('template')) {
-        console.log('!$(this).hasClass started running');
-        var val = $(this).attr('.title').text();
+        var val = $(this).attr('data-category');
         console.log('the val variable is ' + val);
         var optionTag = '<option value="' + val + '">' + val + '</option>';
         $('#project-filter').append(optionTag);
