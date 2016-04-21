@@ -14,27 +14,26 @@
     $('article').each(function() {
       if (!$(this).hasClass('template')) {
         var val = $(this).attr('data-category');
-        console.log('the val variable is ' + val);
         var optionTag = '<option value="' + val + '">' + val + '</option>';
         $('#project-filter').append(optionTag);
-        console.log('the optionTag is ' + optionTag);
       }
     });
   };
-  // projectView.populateFilter();
 
-  // articleView.handleAuthorFilter = function() {
-  //   $('#author-filter').on('change', function() {
-  //     if ($(this).val()) {
-  //       $('article').hide();
-  //       $('article[data-author="' + $(this).val() + '"]').fadeIn();
-  //     } else {
-  //       $('article').fadeIn();
-  //       $('article.template').hide();
-  //     }
-  //     $('#category-filter').val('');
-  //   });
-  // };
+  projectView.handleFilter = function() {
+    console.log('handleFilter running');
+    $('#project-filter').on('change', function() {
+      console.log('change registered');
+      if ($(this).val()) {
+        $('article').hide();
+        $('article[data-category="' + $(this).val() + '"]').fadeIn();
+      } else {
+        $('article').fadeIn();
+        $('article.template').hide();
+      }
+    });
+  };
+  projectView.handleFilter();
 
   projectView.initIndexPage = function () {
     Post.all.forEach(function(a){
