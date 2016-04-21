@@ -6,7 +6,6 @@
     $('.main-nav').on('click', '.tab', function(){
       $('section').hide();
       $('#' + $(this).data('content')).fadeIn();
-      // console.log($(this).data('content'));
     });
   };
 
@@ -33,7 +32,6 @@
       }
     });
   };
-  projectView.handleFilter();
 
   projectView.initIndexPage = function () {
     Post.all.forEach(function(a){
@@ -42,6 +40,7 @@
   };
 
   projectView.handleMainNav();
+  projectView.handleFilter();
 
   module.projectView = projectView;
 

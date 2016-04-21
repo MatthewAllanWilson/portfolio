@@ -25,18 +25,21 @@
 
   Post.fetchAll = function (){
     if (localStorage.postRawData){
-      // $.ajax({
-      //   type: 'HEAD',
-      //   url: '/data/projects.json'
-      // }).done(function(xhr, message, data) {
-      //   var eTag = xhr.getResponseHeader('eTag');
-      //   if(eTag = localStorage.eTag) {
-      //     projectView.initIndexPage();
-      //   } else {
-      Post.loadAll(JSON.parse(localStorage.postRawData));
-      projectView.initIndexPage();
-        // }
-      // });
+      $.ajax({
+        type: 'HEAD',
+        url: '/data/projects.json',
+        success: function(data, message, xhr) {
+          var eTag = xhr.getResponseHeader('eTag');
+          if(!localStorage.eTag || eTag !== localStorage.eTag) {
+            localStorage.eTag = eTag;
+            Post.loadAll(JSON.parse(localStorage.postRawData));
+            projectView.initIndexPage();
+          } else {
+            Post.loadAll(JSON.parse(localStorage.postRawData));
+            projectView.initIndexPage();
+          }
+        }
+      });
     } else {
       $.getJSON('/data/projects.json', function(data){
         Post.loadAll(data);
