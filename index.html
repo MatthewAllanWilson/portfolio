@@ -39,6 +39,9 @@
     </section>
 
   <section id="projects">
+    <select id="project-filter">
+        <option value=""> Filter by Project </option>
+    </select>
 <p class="opening-line">Check out some of the great projects I've been working on:</p>
   </section>
 
@@ -52,6 +55,8 @@
   <script src="js/view.js"></script>
   <script src="js/app.js"></script>
   <script type="text/JavaScript">Post.fetchAll();
+  </script>
+  <script type="text/JavaScript">projectView.populateFilter();
   </script>
 </body>
 <footer>
