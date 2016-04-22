@@ -40,6 +40,7 @@
   };
 
   projectView.handleMainNav();
+  projectView.populateFilter();
   projectView.handleFilter();
 
   module.projectView = projectView;
