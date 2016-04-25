@@ -23,7 +23,7 @@
     });
   };
 
-  Post.fetchAll = function (){
+  Post.fetchAll = function (next){
     if (localStorage.postRawData){
       $.ajax({
         type: 'HEAD',
@@ -33,10 +33,10 @@
           if(!localStorage.eTag || eTag !== localStorage.eTag) {
             localStorage.eTag = eTag;
             Post.loadAll(JSON.parse(localStorage.postRawData));
-            projectView.initIndexPage();
+            next();
           } else {
             Post.loadAll(JSON.parse(localStorage.postRawData));
-            projectView.initIndexPage();
+            next();
           }
         }
       });
@@ -44,7 +44,7 @@
       $.getJSON('/data/projects.json', function(data){
         Post.loadAll(data);
         localStorage.setItem('postRawData', JSON.stringify(data));
-        projectView.initIndexPage();
+        next();
       });
     }
   };

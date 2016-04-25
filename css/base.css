@@ -1,6 +1,29 @@
 body {
-  background-color:#F0F8FF;
+background-image: url(../images/washington-beautiful.jpg);
+height: 100%
+max-width: 100%;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
+margin: 0 auto;
 }
+
+.body-content {
+width: 80%;
+height: 80%;
+margin: 0 auto;
+margin-top: 20px;
+margin-bottom: 20px;
+padding: 1rem 2rem;
+border-radius: 10px;
+background: rgba(0, 0, 0, 0.6);
+color: #fff;
+}
+
+li {
+  color: #fff;
+}
+
 img {
   max-width: 50%;
   margin-left: 20px;
@@ -8,7 +31,11 @@ img {
 }
 h1 {
   font-size: 1.5em;
-  margin-left: 10px;
+  text-align: center;
+}
+
+a {
+  color: #fff;
 }
 
 .opening-line {
@@ -28,6 +55,8 @@ h1 {
   padding: 0;
   list-style: none;
   clear: both;
+  color: white;
+  text-decoration: none;
 }
 
 .border {

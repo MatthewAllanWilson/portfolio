@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Matthew Wilson's Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/layout.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/modules.css"></link>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <html>
+    <head>
+        <title>Matthew Wilson's Portfolio</title>
 
-      <script id="project-template" type="text/x-handlebars-template">
-      <article data-category="{{title}}">
-      <div class="title">{{title}}</div>
-      <p class="date">{{date}}</p>
-      <p class="description">{{description}}</p>
-      <br>
-      <img src="{{image}}">
-      <br>
-      <a href="{{link}}" class="link">{{link}}</a>
-      <br>
-      </article>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="css/base.css"></link>
+          <link rel="stylesheet" type="text/css" href="css/layout.css"></link>
+          <link rel="stylesheet" type="text/css" href="css/modules.css"></link>
 
-    </script>
-</head>
+            <script id="project-template" type="text/x-handlebars-template">
+                <article data-category="{{title}}">
+                  <div class="title">{{title}}</div>
+                  <p class="date">{{date}}</p>
+                  <p class="description">{{description}}</p>
+                  <br>
+                  <img src="{{image}}">
+                  <br>
+                  <a href="{{link}}" class="link">{{link}}</a>
+                  <br>
+              </article>
+            </script>
+    </head>
 <body>
+
+<div class="body-content">
 
   <nav class= "main-nav">
     <ul>
@@ -33,32 +35,31 @@
   </nav>
 
   <h1>Matthew Wilson's Web Development Portfolio</h1>
-<div id="whole-page">
-  <section id="main-page">
-  <img src="images/FacePic.jpg">
-    </section>
+    <div id="whole-page">
+      <section id="main-page">
+        <img src="images/FacePic.jpg">
+      </section>
 
-  <section id="projects">
-    <select id="project-filter">
-        <option value=""> Filter by Project </option>
-    </select>
-<p class="opening-line">Check out some of the great projects I've been working on:</p>
-  </section>
+      <section id="projects">
+        <select id="project-filter">
+          <option value=""> Filter by Project </option>
+        </select>
+          <p class="opening-line">Check out some of the great projects I've been working on:</p>
+      </section>
 
-<section id="about">
-  <p>This is my about section</p>
-</section>
-</div>
+      <section id="about">
+        <p>This is my about section</p>
+      </section>
+  </div>
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/app.js"></script>
-  <script type="text/JavaScript">Post.fetchAll();
-  </script>
-  <script type="text/JavaScript">projectView.populateFilter();
-  </script>
+<script src="js/app.js"></script>
+<script src="js/view.js"></script>
+<script type="text/JavaScript">Post.fetchAll(projectView.initIndexPage);</script>
+
+</div>
 </body>
-<footer>
-</footer>
+  <footer>
+  </footer>
 </html>
