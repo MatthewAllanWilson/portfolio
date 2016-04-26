@@ -2,12 +2,12 @@
 
   var projectView = {};
 
-  projectView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(){
-      $('section').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-  };
+  // projectView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function(){
+  //     $('section').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  // };
 
   projectView.populateFilter = function() {
     $('article').each(function() {
@@ -34,12 +34,14 @@
   };
 
   projectView.initIndexPage = function () {
-    Post.all.forEach(function(a){
-      $('#projects').append(a.toHtml());
-    });
-    projectView.handleMainNav();
-    projectView.populateFilter();
-    projectView.handleFilter();
+    if ($('#projects article').length==0){
+      Post.all.forEach(function(a){
+        $('#projects').append(a.toHtml());
+      });
+    // projectView.handleMainNav();
+      projectView.populateFilter();
+      projectView.handleFilter();
+    };
   };
 
   module.projectView = projectView;
