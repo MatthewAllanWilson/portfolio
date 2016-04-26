@@ -2,12 +2,12 @@
 
   var projectView = {};
 
-  projectView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(){
-      $('section').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-  };
+  // projectView.handleMainNav = function() {
+  //   $('.main-nav').on('click', '.tab', function(){
+  //     $('section').hide();
+  //     $('#' + $(this).data('content')).fadeIn();
+  //   });
+  // };
 
   projectView.populateFilter = function() {
     $('article').each(function() {
@@ -37,7 +37,7 @@
     Post.all.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
-    projectView.handleMainNav();
+    // projectView.handleMainNav();
     projectView.populateFilter();
     projectView.handleFilter();
   };
