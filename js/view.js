@@ -34,12 +34,14 @@
   };
 
   projectView.initIndexPage = function () {
-    Post.all.forEach(function(a){
-      $('#projects').append(a.toHtml());
-    });
+    if ($('#projects article').length==0){
+      Post.all.forEach(function(a){
+        $('#projects').append(a.toHtml());
+      });
     // projectView.handleMainNav();
-    projectView.populateFilter();
-    projectView.handleFilter();
+      projectView.populateFilter();
+      projectView.handleFilter();
+    };
   };
 
   module.projectView = projectView;

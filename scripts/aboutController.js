@@ -5,7 +5,7 @@
     Post.fetchAll(projectView.initIndexPage);
 
     $('section').hide();
-    $('#' + $(this).data('content')).fadeIn();
+    $('#about').fadeIn();
   };
   module.aboutController = aboutController;
 })(window);
