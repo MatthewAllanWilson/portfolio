@@ -2,7 +2,7 @@
   var aboutController = {};
 
   aboutController.index = function () {
-    Post.fetchAll(projectView.initIndexPage);
+    // Post.fetchAll(projectView.initIndexPage);
 
     $('section').hide();
     $('#about').fadeIn();
