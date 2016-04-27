@@ -3,8 +3,8 @@
 
   // DONE: Private methods declared here live only within the scope of the wrapping IIFE.
   var ui = function() {
-    var $repos = $('#repos'); // Best practice: Cache the DOM query if it's used more than once.
-
+    var $repos = $('#repos-display'); // Best practice: Cache the DOM query if it's used more than once.
+    //
     $repos.find('ul').empty();
     $repos.show().siblings().hide();
   };
@@ -19,11 +19,11 @@
 
   // DONE: If all the data is loaded, we can prep the UI and render the repos.
   repoView.index = function() {
-    ui();
+    // ui();
 
     // The jQuery `append` method lets us append an entire array of HTML elements at once,
     // So we can use a little FP to transform our data-set into DOM nodes:
-    $('#repos ul').append(
+    $('#repos-display').append(
       repos.with('name').map(render)
       // Remember: repos.with is a method we wrote in the repos model.
     );
