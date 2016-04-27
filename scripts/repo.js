@@ -4,7 +4,7 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.get('/github.com/users/MatthewAllanWilson/repos' + '?per_page=20cd' + '&sort=updated')
+    $.get('https://api.github.com/users/MatthewAllanWilson/repos' + '?per_page=20cd' + '&sort=updated')
     .done(function(data) {
       repos.all = data;
     })
