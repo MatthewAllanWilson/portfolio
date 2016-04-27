@@ -10,6 +10,7 @@
       headers: {'Authorization': 'token ' + githubToken},
       success: function(data) {
         repos.all = data;
+        console.log(data);
         callback();
       }
     });
