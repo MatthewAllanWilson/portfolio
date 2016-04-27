@@ -3,10 +3,10 @@
   var repoController = {};
 
   repoController.index = function () {
-    $('section').hide();
 
     repos.requestRepos(repoView.index);
-    // $('#about').fadeIn();
+    $('section').hide();
+    $('#repos').fadeIn();
   };
   module.repoController = repoController;
 })(window);
