@@ -4,16 +4,11 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.ajax({
-      url: 'https://api.github.com/users/MatthewAllanWilson/repos' + '?per_page=20cd' + '&sort=updated',
-      type: 'GET',
-      headers: {'Authorization': 'token ' + githubToken},
-      success: function(data) {
-        repos.all = data;
-        console.log(data);
-        callback();
-      }
-    });
+    $.get('https://api.github.com/users/MatthewAllanWilson/repos' + '?per_page=20cd' + '&sort=updated')
+    .done(function(data) {
+      repos.all = data;
+    })
+    .done(callback);
   };
 
   repos.with = function(attr) {
