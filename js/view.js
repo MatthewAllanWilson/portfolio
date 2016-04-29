@@ -2,13 +2,6 @@
 
   var projectView = {};
 
-  // projectView.handleMainNav = function() {
-  //   $('.main-nav').on('click', '.tab', function(){
-  //     $('section').hide();
-  //     $('#' + $(this).data('content')).fadeIn();
-  //   });
-  // };
-
   projectView.populateFilter = function() {
     $('article').each(function() {
       if (!$(this).hasClass('template')) {
@@ -21,16 +14,21 @@
 
   projectView.handleFilter = function() {
     console.log('handleFilter running');
-    $('#project-filter').on('change', function() {
+    $('#project-filter').on('change', function () {
       console.log('change registered');
-      if ($(this).val()) {
-        $('article').hide();
-        $('article[data-category="' + $(this).val() + '"]').fadeIn();
-      } else {
-        $('article').fadeIn();
-        $('article.template').hide();
-      }
+      resource = this.id.replace('-filter', '');
+      page('/' + resource + '/' + $(this).val().replace(/\W+/g, '+'));
     });
+    // $('#project-filter').on('change', function() {
+    //   console.log('change registered');
+    //   if ($(this).val()) {
+    //     $('article').hide();
+    //     $('article[data-category="' + $(this).val() + '"]').fadeIn();
+    //   } else {
+    //     $('article').fadeIn();
+    //     $('article.template').hide();
+    //   }
+    // });
   };
 
   projectView.initIndexPage = function () {
@@ -38,7 +36,6 @@
       Post.all.forEach(function(a){
         $('#projects').append(a.toHtml());
       });
-    // projectView.handleMainNav();
       projectView.populateFilter();
       projectView.handleFilter();
     };
