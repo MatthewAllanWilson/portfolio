@@ -14,8 +14,11 @@
       ctx.projects = projectByTitle;
       next();
     };
+    ctx.params.projectTitle.replace('+', ' ');
+    projectData();
+
 //STILL NEED TO CHANGE 'AUTHOR'
-    Post.findWhere('author', ctx.params.projectTitle.replace('+', ' '), projectData);
+    Post.findWhere('title', ctx.params.projectTitle.replace('+', ' '), projectData);
   };
 
 
