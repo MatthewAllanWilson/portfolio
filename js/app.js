@@ -49,6 +49,10 @@
     }
   };
 
+  Post.findWhere = function () {
+    //need to find the project title
+  }
+
   module.Post = Post;
 
 })(window);
